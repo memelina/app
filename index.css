@@ -1,0 +1,16 @@
+/* Efect flip pe Y */
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.relative div {
+  transform-style: preserve-3d;
+}
+
+img {
+  backface-visibility: hidden;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}

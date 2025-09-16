@@ -1,0 +1,160 @@
+/* Container imagine */
+.header-image-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Banner */
+.header-image {
+  max-width: 25%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Buton promoțional animat */
+.promo-button {
+  background: linear-gradient(90deg,  #e41468,  #ff416c);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 0 15px rgba(255, 65, 108, 0.6);
+  animation: pulse 2s infinite alternate;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.promo-button:hover,
+.promo-button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 65, 108, 0.8);
+}
+
+/* Restart button */
+.restart-button {
+  padding: 0.5rem 1.5rem;
+  color: white;
+  background-color: #ff416c;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.restart-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 65, 108, 0.5);
+}
+
+/* Container pentru Timer + Restart + Statistici */
+.timer-and-restart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* spațiu între elemente */
+  margin-bottom: 20px;
+}
+
+/* Timer mic, compatibil cu Restart */
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem !important; /* la fel ca Restart */
+  font-weight: bold;
+  font-size: 1rem;        
+  border-radius: 0.5rem;  
+  background-color: #ff416c; 
+  color: white;
+  min-width: auto;        
+  text-align: center;
+}
+
+/* Culori timer în funcție de timp */
+.timer-normal {
+  background-color: #ff416c;
+}
+
+.timer-warning {
+  background-color: #ff416c;
+  animation: pulse 2s infinite;
+}
+
+.timer-critical {
+  background: linear-gradient(135deg, #ff416c, #e41468);
+  color: white;
+  animation: pulse 1s infinite;
+}
+
+/* Text statistici inline */
+.game-stats-inline {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Animația pulsantă pentru promo-button */
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    box-shadow: 0 0 20px rgba(255, 65, 108, 0.7);
+  }
+  50% {
+    transform: scale(1.0);
+    box-shadow: 0 0 25px rgba(255, 65, 108, 0.8);
+  }
+  100% {
+    transform: scale(0.8);
+    box-shadow: 0 0 20px rgba(255, 65, 108, 0.7);
+  }
+}
+
+/* Responsive pentru ecrane medii */
+@media (max-width: 768px) {
+  .promo-button {
+    font-size: 1.5rem;
+    padding: 12px 20px;
+  }
+
+  .timer-and-restart {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Responsive pentru ecrane mici */
+@media (max-width: 480px) {
+  .promo-button {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+}
