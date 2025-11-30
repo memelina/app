@@ -1,0 +1,424 @@
+/* Container principal */
+.game-container {
+  display: flex;
+  flex-direction: column;     /* păstrează elementele pe verticală */
+  justify-content: center;    /* centru vertical */
+  align-items: center;        /* centru orizontal */
+  padding: 2rem;              /* padding egal pe toate laturile */
+  min-height: 100vh;              /* containerul ocupă întreaga înălțime a ecranului */
+  box-sizing: border-box;     /* padding inclus în dimensiune */
+  background-color: #cc2632;
+}
+
+.game-stats {
+  display: flex;
+  flex-direction: row; /* pe orizontală */
+  align-items: center; /* aliniere verticală */
+  justify-content: center; /* centru pe linie */
+  gap: 2rem; /* spațiu între elemente */
+  margin-bottom: 1.5rem;
+ 
+}
+.game-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+
+/* Header */
+.game-header {
+  margin-bottom: 0.5rem;
+}
+
+.game-title {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #cc2632 ;
+}
+
+.game-stats {
+  display: flex;
+  flex-direction: row; /* pe orizontală */
+  align-items: center; /* aliniere verticală */
+  justify-content: center; /* centru pe linie */
+  gap: 2rem; /* spațiu între elemente */
+  margin-bottom: 1.5rem;
+}
+
+.stats-info {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #cc2632;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #cc2632;
+}
+
+.restart-button {
+  padding: 0.5rem 1.5rem;
+  color: white;
+  background-color: #cc2632;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+
+/* Timer styles */
+.timer-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+ background-color: #cc2632;
+ color:white;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.timer-normal {
+  
+ 
+    background-color: #cc2632;
+}
+
+.timer-warning {
+ background-color: #cc2632;
+  color: white;
+  animation: pulse-warning 2s infinite;
+}
+
+.timer-critical {
+  background: linear-gradient(135deg,  #cc2632,  #cc2632);
+  color: white;
+  animation: pulse-critical 1s infinite;
+}
+
+.timer-stopped {
+  background-color: #cc2632;
+  color: white;
+}
+
+/* Game board 4x4 */
+.game-board-4x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(6, 1fr); 
+  gap: 0.5rem;
+  justify-items: center;
+  margin-bottom: 0.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card styles pentru imagini PNG */
+.card-container {
+  perspective: 1000px;
+  width: 80px;
+  height: 80px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card.flipped:hover {
+  transform: rotateY(180deg) scale(1.02);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.card-back {
+  background-color: #fbd70a;
+}
+
+.card-back-content {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-front {
+  background: white;
+  transform: rotateY(180deg);
+  padding: 0.25rem;
+}
+
+/* Imaginile PNG */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.card-fallback {
+  font-size: 2rem;
+  background-color: #cc2632;
+}
+
+/* Win message */
+.win-message {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0rem;
+  border-radius: 0.75rem;
+  border: 2px solid #cc2632;
+}
+
+.win-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #cc2632;
+  margin-bottom: 1rem;
+}
+
+.win-stats {
+  margin: 1rem 0;
+}
+
+.win-stats p {
+  margin: 0.5rem 0;
+  color: #cc2632;
+  font-size: 1rem;
+}
+
+
+
+/* Game Over Message */
+.game-over-message {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+ background-color: #cc2632;
+  border-radius: 0.75rem;
+  border: 2px solid #cc2632;
+}
+
+.game-over-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.game-over-text {
+  color: white;
+  font-weight: 600;
+}
+
+/* Footer */
+.game-footer {
+  text-align: center;
+  color: #cc2632;
+  font-size: 0.875rem;
+}
+
+/* Responsive pentru 4x4 */
+@media (max-width: 768px) {
+  .game-container {
+    padding: 1rem;
+  }
+  
+  .game-card {
+    padding: 1.5rem;
+  }
+  
+  .game-board-4x4 {
+    gap: 0.75rem;
+    max-width: 320px;
+  }
+  
+  .card-container {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .timer {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    min-width: 100px;
+  }
+  
+  .stat-value {
+    font-size: 1.25rem;
+  }
+  
+  .stats-info {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-board-4x4 {
+    gap: 0.5rem;
+    max-width: 280px;
+  }
+  
+  .card-container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .timer {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 90px;
+  }
+  
+  .game-stats {
+    gap: 0.75rem;
+  }
+  
+  .stats-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .win-message, .game-over-message {
+    padding: 1rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .card {
+    cursor: default;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+  
+  .card:active {
+    transform: scale(0.92);
+  }
+  
+  .card.flipped:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped:active {
+    transform: rotateY(180deg) scale(0.92);
+  }
+  
+  .restart-button:hover {
+    transform: none;
+  }
+  
+  .restart-button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Prevent text selection */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for readable content */
+.game-title,
+.stat-label,
+.win-title,
+.win-stats,
+.game-over-title,
+.game-over-text,
+.game-footer p {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* Definirea animației de pulsație */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(228, 20, 104, 0.7); /* Culoarea umbrei (roșu/roz) */
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(228, 20, 104, 0); /* Mărimea și transparența umbrei */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(228, 20, 104, 0);
+  }
+}
+
+/* Clasa aplicată butonului */
+.start-pulse {
+  /* Aplică animația */
+  animation: pulse 1.5s infinite; 
+}

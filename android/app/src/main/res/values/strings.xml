@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">memory-gameTGM_LUNG</string>
+    <string name="title_activity_main">memory-gameTGM_LUNG</string>
+    <string name="package_name">com.example.memorygame4</string>
+    <string name="custom_url_scheme">com.example.memorygame4</string>
+</resources>
